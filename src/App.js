@@ -2,7 +2,7 @@ import * as React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Box from '@material-ui/core/Box';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+// import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
@@ -52,7 +52,7 @@ export default function App(props) {
         <HideOnScroll {...props}>
           <AppBar>
             <Toolbar>
-              <Box ml={"15%"}><img src={logo} width="15%"/></Box>
+              <Box ml={"15%"}><img src={logo} width="15%" alt='logo'/></Box>
             </Toolbar>
           </AppBar>
         </HideOnScroll>
