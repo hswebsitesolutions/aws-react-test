@@ -1,26 +1,15 @@
 import * as React from 'react';
-import AppBar from '@material-ui/core/AppBar';
+
 import Box from '@material-ui/core/Box';
-import Toolbar from '@material-ui/core/Toolbar';
+
 // import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import useScrollTrigger from '@material-ui/core/useScrollTrigger';
-import Slide from '@material-ui/core/Slide';
+
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+import EPSAppBar from './components/nav';
 
-import logo from './static/app-bar-black.png';
 
-function HideOnScroll(props) {
-  const { children } = props;
-  const trigger = useScrollTrigger();
-
-  return (
-    <Slide appear={false} direction="down" in={!trigger}>
-      {children}
-    </Slide>
-  );
-}
 
 const theme = createTheme({
   palette: {
@@ -44,19 +33,13 @@ const theme = createTheme({
   }
 });
 
+
 export default function App(props) {
   return (
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <CssBaseline />
-        <HideOnScroll {...props}>
-          <AppBar>
-            <Toolbar>
-              <Box ml={"15%"}><img src={logo} width="15%" alt='logo'/></Box>
-            </Toolbar>
-          </AppBar>
-        </HideOnScroll>
-        <Toolbar />
+        <EPSAppBar />
         <Container>
           <Box sx={{ my: 2 }}>
             {[...new Array(12)]
