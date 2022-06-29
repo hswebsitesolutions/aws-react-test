@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import Box from '@material-ui/core/Box';
 
-// import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
@@ -37,7 +36,6 @@ const theme = createTheme({
 export default function App(props) {
   return (
     <ThemeProvider theme={theme}>
-      <React.Fragment>
         <CssBaseline />
         <EPSAppBar />
         <Container>
@@ -52,7 +50,6 @@ export default function App(props) {
               .join('\n')}
           </Box>
         </Container>
-      </React.Fragment>
     </ThemeProvider>
   );
 }
