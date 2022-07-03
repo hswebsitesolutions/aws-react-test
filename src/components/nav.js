@@ -5,7 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import logo from './static/app-bar-black.png';
 import Box from '@material-ui/core/Box';
-import { Container } from "@material-ui/core";
+// import { Container } from "@material-ui/core";
 import Typography from '@material-ui/core/Typography';
 import MenuIcon from '@mui/icons-material/Menu'
 import IconButton from '@mui/material/IconButton';
@@ -40,8 +40,9 @@ const EPSAppBar = () => {
 
     return(
         <HideOnScroll>
-            <AppBar position="sticky">
-                <Container maxWidth="x1">
+            <Box sx={{flexGrow:1}}>
+                <AppBar position="sticky">
+                {/* <Container maxWidth="x1"> */}
                     <Toolbar>
                         {/* Mobile EPS logo/home button */}
                         <Box sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}  component='a' href="/"><img src={logo} width="15%" alt='logo'/></Box>
@@ -103,8 +104,10 @@ const EPSAppBar = () => {
                             ))}
                         </Box>
                     </Toolbar>
-                </Container>
-            </AppBar>
+                {/* </Container> */}
+                </AppBar>
+            </Box>
+            
         </HideOnScroll>
     );
 }
