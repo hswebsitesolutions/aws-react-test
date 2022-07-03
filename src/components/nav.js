@@ -12,8 +12,9 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
+import {Link} from 'react-router-dom';
 
-const pages = ["Home", "EV Sockets", "Gallery", "Our Clients", "Contact Us"]
+const pages = ["Home", "EV-Sockets", "Gallery", "Our-Clients", "Contact-Us"]
 
 function HideOnScroll(props) {
     const { children } = props;
@@ -39,7 +40,7 @@ const EPSAppBar = () => {
 
     return(
         <HideOnScroll>
-            <AppBar>
+            <AppBar position="sticky">
                 <Container maxWidth="x1">
                     <Toolbar>
                         {/* Mobile EPS logo/home button */}
@@ -78,7 +79,9 @@ const EPSAppBar = () => {
                             >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                <Typography textalign="center">{page}</Typography>
+                                <Typography textalign="center">
+                                <Link to={`/${page}`}>{page}</Link>
+                                </Typography>
                                 </MenuItem>
                             ))}
                             </Menu>
@@ -95,7 +98,7 @@ const EPSAppBar = () => {
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'black', display: 'block' }}
                                 >
-                                    {page}
+                                    <Link to={`/${page}`}>{page}</Link>
                                 </Button>
                             ))}
                         </Box>
